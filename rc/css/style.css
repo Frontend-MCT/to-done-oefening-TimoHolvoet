@@ -1,0 +1,177 @@
+html, body {
+  font-family: 'Muli', sans-serif;
+}
+
+:root {
+  --gutter: 8px;
+  --color-alpha: #ff3c01;
+  --color-neutral: #909090;
+  --color-dark: #141414;
+}
+
+/* Components */
+.c-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* c-dropdown */
+/* The container <div> - needed to position the dropdown content */
+.c-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.c-dropdown-input {
+  all: unset;
+  display: flex;
+  align-items: center;
+}
+
+/* todo if tijd over */
+.c-dropdown::after {
+  margin-left: 100%;
+  width: 5px;
+  height: 5px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid var(--color-dark);
+  content: "";
+}
+
+/* Dropdown Content (Hidden by Default) */
+.c-dropdown__items {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.c-dropdown__items a {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown__items a:hover {
+  background-color: #f1f1f1
+}
+
+/* Show the dropdown menu on hover */
+.c-dropdown:hover .c-dropdown__items {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.c-dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+/* c-todo */
+/* c-todo-form */
+.c-todo-form-container {
+  display: flex;
+  align-items: center;
+  width: 400px;
+}
+
+.c-todo-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--gutter)*2);
+}
+
+.c-todo-form__input {
+  all: unset;
+  font-size: 24px;
+}
+
+/* c-todo-list */
+.c-todo-list {
+  all: unset;
+  width: 400px;
+}
+
+.c-todo-list__item {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.c-todo-list__content {
+  margin-left: calc(var(--gutter)*2);
+}
+
+/*
+    Component: Custom options
+    ---
+    Custom checkboxes & radio buttons
+*/
+/* Hide the actual input with the class .o-hide-accessible */
+/* checked state */
+.c-custom-input-option-hidden:checked+.c-custom-input-option-label {
+  opacity: 1;
+  transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+.c-custom-input-option-hidden:checked+.c-custom-input-option-label .c-custom-input-option__symbol {
+  opacity: 1;
+  transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+}
+
+.c-custom-input-option__symbol {
+  display: block;
+  opacity: 0;
+  width: calc(var(--gutter)*3);
+  height: calc(var(--gutter)*3);
+}
+
+.c-custom-input-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--gutter)*3);
+  height: calc(var(--gutter)*3);
+  border: 1px solid var(--color-alpha);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.c-custom-input-option-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.c-custom-input-option--checkbox .c-custom-input-option__symbol {
+  fill: white;
+  width: 10px;
+  height: 10px;
+  padding: 7px;
+  background-color: var(--color-alpha);
+  border-radius: 50%;
+}
+
+/* Objects */
+.o-hide {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Utilities */
+.u-border-bottom {
+  border-bottom: 1px solid var(--color-neutral);
+}

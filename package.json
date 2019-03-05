@@ -1,0 +1,10 @@
+{
+  "name": "ToDone",
+  "version": "0.0.2",
+  "description": "A small app to keep track of my todos.",
+  "main": "null",
+  "repository": "https://github.com/Frontend-MCT/to-done-oefening-TimoHolvoet.git",
+  "author": "Timo",
+  "license": "null",
+  "private": false
+}
